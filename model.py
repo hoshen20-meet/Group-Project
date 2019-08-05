@@ -13,7 +13,7 @@ class Customers(Base):
    purchased_books = Column(String)
    name = Column(String)
    nickname = Column(String)
-   password = Column(String)
+   password_hash = Column(String)
    
 
 class Books(Base):
@@ -22,3 +22,7 @@ class Books(Base):
     title = Column(String)
     price = Column(String)
    
+def hash_password(self, password):
+	  self.password_hash = pwd_security.encrypt(password)
+def verify_password(self, password):
+   return pwd_security.verify(password,self.password_hash)

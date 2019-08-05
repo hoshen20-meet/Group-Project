@@ -13,6 +13,10 @@ def home_page():
 def about():
 	return render_template("about-us.html")
 
+@app.route('/causes')
+def causes():
+    return render_template('causes.html')
+
 
 
 if __name__ == '__main__':

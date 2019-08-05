@@ -8,67 +8,66 @@ Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-def add_customer(name , purchased_books):
+def add_customer(name ,nickname, password):
 	"""
 	Add a student to the database, given
 	their name, year, and whether they have
 	finished the lab.
 	"""
 	Customer_object = Customers(
-		purchased_books=purchased_books,
 		name=name,
-		nickname=nickname,
-                password=password)
-	session.add(student_object)
+		nickname=nickname)
+	Customer_object.hash_password(password)
+	session.add(Customer_object)
 	session.commit()
 
-def query_by_name(name):
+def query_customers_by_name(name):
 	"""
 	Find the first student in the database,
 	by their name
 	"""
-	student = session.query(Student).filter_by(
+	Customers = session.query(Customers).filter_by(
 		name=name).first()
-	return student
+	return Customer
 
-def query_all():
+def query_all_customers():
 	"""
 	Print all the students in the database.
 	"""
-	students = session.query(Student).all()
-	return students
+	Customers = session.query(Customers).all()
+	return Customers
 
-def delete_student_id(id_number):
+def delete_customer_id(id_number):
 	"""
 	Delete all students with a certain name
 	from the database.
 	"""
-	session.query(Student).filter_by(
-		student_id=id_number).delete()
+	session.query(Customers).filter_by(
+		Customer_id=id_number).delete()
 	session.commit()
 
-def delete_student_name(name):
+def delete_customer_name(name):
 	"""
 	Delete all students with a certain name
 	from the database.
 	"""
-	session.query(Student).filter_by(
+	session.query(Customers).filter_by(
 		name=name).delete()
 	session.commit()
 
-def update_lab_status(name, finished_lab):
-	"""
-	Update a student in the database, with 
-	whether or not they have finished the lab
-	"""
-	student_object = session.query(Student).filter_by(
-		name=name).first()
-	student_object.finished_lab = finished_lab
-	session.commit()
+##def update_lab_status(name, finished_lab):
+##	"""
+##	Update a student in the database, with 
+##	whether or not they have finished the lab
+##	"""
+##	Customer_object = session.query(Customers).filter_by(
+##		name=name).first()
+##	Customer_object.finished_lab = finished_lab
+##	session.commit()
 
-def query_by_id(student_id):
-    student = session.query(Student).filter_by(
-        student_id=student_id).first()
+def query_customer_by_id(customer_id):
+    Customers = session.query(Customers).filter_by(
+            customer_id=customer_id).first()
     return student
 
 
