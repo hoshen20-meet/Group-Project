@@ -13,9 +13,9 @@ def home_page():
 def about():
 	return render_template("about-us.html")
 
-@app.route('/causes')
-def causes():
-    return render_template('causes.html')
+@app.route('/store')
+def store():
+    return render_template('store.html')
 
 @app.route('/events')
 def events():
