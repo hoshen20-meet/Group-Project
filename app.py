@@ -41,5 +41,9 @@ def singlr_blog():
 def contact():
     return render_template('contact.html')
 
+@app.route('/log_in')
+def log_in():
+    return render_template ("log_in.html" )
+
 if __name__ == '__main__':
    app.run(debug = True)
