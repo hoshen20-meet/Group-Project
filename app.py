@@ -17,9 +17,9 @@ def about():
 def store():
     return render_template('store.html')
 
-@app.route('/events')
+@app.route('/staff')
 def events():
-    return render_template('events.html')
+    return render_template('staff.html')
 
 @app.route('/event-details')
 def event_details():
