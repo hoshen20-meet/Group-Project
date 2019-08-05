@@ -17,6 +17,10 @@ def about():
 def causes():
     return render_template('causes.html')
 
+@app.route('/events')
+def events():
+    return render_template('events.html')
+
 
 
 if __name__ == '__main__':
