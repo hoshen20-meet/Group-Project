@@ -20,7 +20,7 @@ class Books(Base):
     __tablename__ = 'Books'
     Book_id = Column(Integer, primary_key=True)
     title = Column(String)
-    price = Column(String)
+    price = Column(Integer)
    
 def hash_password(self, password):
 	  self.password_hash = pwd_security.encrypt(password)
