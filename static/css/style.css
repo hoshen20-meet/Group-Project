@@ -2776,6 +2776,19 @@ h6 {
 .color {
   color: #71da71;
 }
+
+.book {
+  padding: 100px;
+  text-align: center;
+}
+
+.center {
+  margin: auto;
+  text-align: center;
+}
+
+
+
 /*---------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */
