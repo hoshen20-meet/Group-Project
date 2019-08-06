@@ -47,6 +47,10 @@
                                     </div>
                                     <div class="d-flex justify-content-between donation align-items-center" style="left: 50%; position: absolute; transform: translateX(-50%);">
                                         <a href="/store" class="primary_btn">Add to Cart</a>
+                                        <br/>
+                                        {% if session['admin'] %}
+                                        <a href="/delete/{{book.Book_id}}" class="primary_btn">Delete</a>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -59,27 +63,6 @@
 
 
 
-<<<<<<< HEAD
-=======
-    <div>
-        {% for book in Books %}
-                <table class="center">
-
-                    <tr>
-                        <td class="book"> <img src="../static/img/{{book.pic}}" width="150px" height="100px"> 
-                        <br>
-                        Book Name: {{book.title}}
-                        <br>
-                        Author: {{book.authorname}}
-                        <br>
-                        Price: {{book.price}} &#8362
-                    </td>                                      
-                    </tr>
-
-                </table>
-                {% endfor %}
-        </div>
->>>>>>> 0d91e68d7fd453cd095b5bffe53e629b600d3d42
 
 
     </body>

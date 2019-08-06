@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from databases import *
 from flask import session as login_session
 
@@ -23,7 +23,9 @@ def about():
 
 @app.route('/store')
 def store():
-    return render_template('store.html')
+    # login_session['admin']=False
+    Books = query_all_books()
+    return render_template("store.html",Books=Books)
 
 @app.route('/staff')
 def events():
@@ -53,7 +55,8 @@ def log_in():
         name = request.form['uname']
         password = request.form['psw']
         if name == 'admin' and password== 'rebooks123':
-            return render_template('add_book.html')
+            login_session["admin"]=True
+            return redirect(url_for('store'))
         else:
             return render_template ("log_in.html",wrong=True )
 
@@ -74,6 +77,13 @@ def add_books():
         add_book(bookname,authorname, price, f.filename)
         Books = query_all_books()
         return render_template("store.html",Books=Books)
+
+@app.route('/delete/<int:id>',methods=['POST','GET'])
+def delete(id):
+    delete_book_id(id)
+    return redirect(url_for('store'))
+
+
 
 
 
