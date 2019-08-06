@@ -38,10 +38,6 @@ def elements():
 def donate():
     return render_template('donate.html')
 
-@app.route('/donate')
-def donate():
-    return render_template('donate.html')
-
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
