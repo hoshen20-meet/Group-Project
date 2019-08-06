@@ -19,7 +19,8 @@ def about():
 
 @app.route('/store')
 def store():
-    return render_template('store.html')
+    Books = query_all_books()
+    return render_template("store.html",Books=Books)
 
 @app.route('/staff')
 def events():
@@ -32,10 +33,6 @@ def event_details():
 @app.route('/elements')
 def elements():
     return render_template('elements.html')
-
-@app.route('/blog')
-def blog():
-    return render_template('blog.html')
 
 @app.route('/donate')
 def donate():
