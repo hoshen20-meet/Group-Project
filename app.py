@@ -59,6 +59,12 @@ def log_in():
     return render_template ("log_in.html" )
 
     
+@app.route('/add_book',methods=['POST','GET'])
+def add_book():
+    if request.method == "GET":
+        return render_template ("add_book.html" )
+    else:
+        bookname=request.form['bookname']
 
 
 if __name__ == '__main__':
