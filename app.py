@@ -6,12 +6,19 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'you-will-never-guess'
 
 
-   
 
 @app.route('/')
 def home_page():
     print(query_all_books())
     return render_template ("home.html" )
+
+@app.route('/cart')
+def cart():
+    return render_template('cart.html')
+
+@app.route('/spesific-book/<int:Book_id>', methods=(['GET','POST']))
+def spesific(Book_id):
+    return render_template('spesific-book.html', Books=query_book_by_id(Book_id))
 
 @app.route('/about')
 def about():
@@ -19,8 +26,7 @@ def about():
 
 @app.route('/store')
 def store():
-    Books = query_all_books()
-    return render_template("store.html",Books=Books)
+    return render_template('store.html')
 
 @app.route('/staff')
 def events():
@@ -33,6 +39,10 @@ def event_details():
 @app.route('/elements')
 def elements():
     return render_template('elements.html')
+
+@app.route('/blog')
+def blog():
+    return render_template('blog.html')
 
 @app.route('/donate')
 def donate():

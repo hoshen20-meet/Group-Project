@@ -182,6 +182,9 @@ button:focus {
     .primary_btn.yellow_btn:hover {
       background: transparent !important; }
 
+#all_headers {
+  margin-right: -30px;
+}
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
 .header_area {
