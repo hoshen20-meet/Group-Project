@@ -21,21 +21,10 @@ def store():
 def events():
     return render_template('staff.html')
 
-@app.route('/event-details')
-def event_details():
-    return render_template('event-details.html')
 
-@app.route('/elements')
-def elements():
-    return render_template('elements.html')
-
-@app.route('/blog')
-def blog():
-    return render_template('blog.html')
-
-@app.route('/single-blog')
-def singlr_blog():
-    return render_template('single-blog.html')
+@app.route('/donate')
+def donate():
+    return render_template('donate.html')
 
 @app.route('/contact')
 def contact():
