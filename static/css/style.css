@@ -524,7 +524,7 @@ button:focus {
     .event_area {
       padding-bottom: 10px; } }
   .event_area .single_event {
-    margin-bottom: 60px; }
+    margin-bottom: 100px; }
     .event_area .single_event figure {
       overflow: hidden;
       margin: 0;
@@ -2788,7 +2788,7 @@ h6 {
 }
 
 .book {
-  padding: 100px;
+  padding: 120px;
   text-align: center;
 }
 
