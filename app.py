@@ -13,14 +13,17 @@ def home_page():
     print(query_all_books())
     return render_template ("home.html" )
 
+@app.route('/cart')
+def cart():
+    return render_template('cart.html')
+
 @app.route('/about')
 def about():
 	return render_template("about-us.html")
 
 @app.route('/store')
 def store():
-    Books = query_all_books()
-    return render_template("store.html",Books=Books)
+    return render_template('store.html')
 
 @app.route('/staff')
 def events():
