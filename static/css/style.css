@@ -61,6 +61,13 @@ h6 {
   font-weight: 600;
   color: #222222; }
 
+.border1 {
+  border-top-style: dotted;
+  border-right-style: solid;
+  border-bottom-style: dotted;
+  border-left-style: solid;
+}
+
 .list {
   list-style: none;
   margin: 0px;

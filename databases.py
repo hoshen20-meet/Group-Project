@@ -78,16 +78,14 @@ def verify_password(self, password):
 
 
 
-def add_book(name, img):
+def add_book(name, author, price, img):
 	"""
 	Add a student to the database, given
 	their name, year, and whether they have
 	finished the lab.
 	"""
-	Book_object = Customers(
-		name=name,
-                img=img)
-	session.add(Customer_object)
+	Book_object = Books(title=name, price=price, authorname=author, pic=img)
+	session.add(Book_object)
 	session.commit()
 
 def query_book_by_name(name):
@@ -97,14 +95,14 @@ def query_book_by_name(name):
 	"""
 	Books = session.query(Books).filter_by(
 		name=name).first()
-	return Customer
+	return Books
 
 def query_all_books():
 	"""
 	Print all the students in the database.
 	"""
-	Books = session.query(Books).all()
-	return Customers
+	books = session.query(Books).all()
+	return books
 
 def delete_book_id(id_number):
 	"""

@@ -10,6 +10,7 @@ app.config['SECRET_KEY'] = 'you-will-never-guess'
 
 @app.route('/')
 def home_page():
+    print(query_all_books())
     return render_template ("home.html" )
 
 @app.route('/about')
@@ -18,7 +19,8 @@ def about():
 
 @app.route('/store')
 def store():
-    return render_template('store.html')
+    Books = query_all_books()
+    return render_template("store.html",Books=Books)
 
 @app.route('/staff')
 def events():
@@ -36,9 +38,9 @@ def elements():
 def donate():
     return render_template('donate.html')
 
-@app.route('/single-blog')
-def singlr_blog():
-    return render_template('single-blog.html')
+@app.route('/donate')
+def donate():
+    return render_template('donate.html')
 
 @app.route('/contact')
 def contact():
@@ -60,11 +62,20 @@ def log_in():
 
     
 @app.route('/add_book',methods=['POST','GET'])
-def add_book():
+def add_books():
     if request.method == "GET":
         return render_template ("add_book.html" )
     else:
         bookname=request.form['bookname']
+        authorname=request.form['authorname']
+        price=request.form['price']
+        print(request.files)
+        f = request.files['bookpic']
+        f.save("static/img/"+f.filename)
+        add_book(bookname,authorname, price, f.filename)
+        Books = query_all_books()
+        return render_template("store.html",Books=Books)
+
 
 
 if __name__ == '__main__':

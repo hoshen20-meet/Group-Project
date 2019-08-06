@@ -21,6 +21,8 @@ class Books(Base):
     Book_id = Column(Integer, primary_key=True)
     title = Column(String)
     price = Column(Integer)
+    authorname=Column(String)
+    pic= Column(String)
    
 def hash_password(self, password):
 	  self.password_hash = pwd_security.encrypt(password)
