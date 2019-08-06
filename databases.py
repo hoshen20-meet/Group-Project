@@ -68,10 +68,73 @@ def delete_customer_name(name):
 def query_customer_by_id(customer_id):
     Customers = session.query(Customers).filter_by(
             customer_id=customer_id).first()
-    return student
+    return Customer
 
 
 def hash_password(self, password):
         self.password_hash = pwd_security.encrypt(password)
 def verify_password(self, password):
         return pwd_security.verify(password,self.password_hash)
+
+
+
+def add_book(name, img):
+	"""
+	Add a student to the database, given
+	their name, year, and whether they have
+	finished the lab.
+	"""
+	Book_object = Customers(
+		name=name,
+                img=img)
+	session.add(Customer_object)
+	session.commit()
+
+def query_book_by_name(name):
+	"""
+	Find the first student in the database,
+	by their name
+	"""
+	Books = session.query(Books).filter_by(
+		name=name).first()
+	return Customer
+
+def query_all_books():
+	"""
+	Print all the students in the database.
+	"""
+	Books = session.query(Books).all()
+	return Customers
+
+def delete_book_id(id_number):
+	"""
+	Delete all students with a certain name
+	from the database.
+	"""
+	session.query(Books).filter_by(
+		Book_id=id_number).delete()
+	session.commit()
+
+def delete_book_name(name):
+	"""
+	Delete all students with a certain name
+	from the database.
+	"""
+	session.query(Books).filter_by(
+		name=name).delete()
+	session.commit()
+
+##def update_lab_status(name, finished_lab):
+##	"""
+##	Update a student in the database, with 
+##	whether or not they have finished the lab
+##	"""
+##	Customer_object = session.query(Customers).filter_by(
+##		name=name).first()
+##	Customer_object.finished_lab = finished_lab
+##	session.commit()
+
+def query_book_by_id(Book_id):
+    Books = session.query(Books).filter_by(
+            Book_id=Book_id).first()
+    return student
