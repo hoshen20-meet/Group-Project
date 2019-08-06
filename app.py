@@ -1,6 +1,9 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from databases import *
+from flask import session as login_session
+
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'you-will-never-guess'
 
 
    
@@ -41,9 +44,25 @@ def singlr_blog():
 def contact():
     return render_template('contact.html')
 
-@app.route('/log_in')
+@app.route('/log_in',methods=['POST','GET'])
 def log_in():
+    if request.method == "GET":
+        return render_template ("log_in.html" )
+    else:
+        name = request.form['uname']
+        password = request.form['psw']
+        if name == 'admin' and password== 'rebooks123':
+            return render_template('add_book.html')
+        else:
+            return render_template ("log_in.html",wrong=True )
+
     return render_template ("log_in.html" )
+
+    
+
 
 if __name__ == '__main__':
    app.run(debug = True)
+
+
+

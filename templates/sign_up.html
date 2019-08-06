@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="{{url_for('static', filename='img/logo.png')}}" type="image/png">
-        <title>Log In</title>
+        <title>Sign Up</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.css')}}">
         <link rel="stylesheet" href="{{url_for('static', filename='vendors/linericon/style.css')}}">
@@ -17,31 +17,36 @@
         <link rel="stylesheet" href="{{url_for('static', filename='css/responsive.css')}}">
     </head>
 <body>
-    {% if wrong %}
-    <p style="color: red;"> wrong username or passsword !</p>
-    {% endif%}
 <center>
-    <form action="/log_in" method="POST" style="width: 400px;">
+    <form action="/sign_up" style="width: 400px;" method="POST">
   <div class="imgcontainer">
-    <font style="font-size: 28px"> Log In</font>
+    <font style="font-size: 28px"> Sign Up</font>
   </div>
 
   <div class="container">
-    <label for="uname" style="float: left;"><b class="color">Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <label for="fullname" style="float: left;"><b class="color">Full Name</b></label>
+    <input type="text" placeholder="Enter Your Full Name" name="fullname" required>
+
+
+    <label for="email" style="float: left;"><b class="color">Email</b></label>
+    <input type="text" placeholder="Enter Your Email" name="email" required>
+
+    <label for="uname" style="float: left;"><b class="color">UserName</b></label>
+    <input type="text" placeholder="Enter Your UserName" name="uname" required>
 
     <label for="psw" style="float: left;"><b class="color">Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
 
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+    <label for="repsw" style="float: left;"><b class="color">RePassword</b></label>
+    <input type="password" placeholder="Confirm Password" name="repsw" required>
+
+    <button type="submit">Sign Up</button>
+    
   </div>
 
   <div class="container" style="background-color:#f1f1f1; float: left;">
     <button type="reset" class="btn btn-outline-success">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
+    <span class="psw">already have an account? <a href="/log_in">Log In</a></span>
   </div>
 </form>
 </center>

@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="{{url_for('static', filename='img/logo.png')}}" type="image/png">
-        <title>Log In</title>
+        <title>Add Book</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.css')}}">
         <link rel="stylesheet" href="{{url_for('static', filename='vendors/linericon/style.css')}}">
@@ -17,32 +17,37 @@
         <link rel="stylesheet" href="{{url_for('static', filename='css/responsive.css')}}">
     </head>
 <body>
-    {% if wrong %}
-    <p style="color: red;"> wrong username or passsword !</p>
-    {% endif%}
+    
 <center>
     <form action="/log_in" method="POST" style="width: 400px;">
   <div class="imgcontainer">
-    <font style="font-size: 28px"> Log In</font>
+    <font style="font-size: 28px"> Add Book</font>
   </div>
 
   <div class="container">
-    <label for="uname" style="float: left;"><b class="color">Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <label for="bookname" style="float: left;"><b class="color">Author's Name</b></label>
+    <input type="text" placeholder="Author's Name" name="authorname" required>
 
-    <label for="psw" style="float: left;"><b class="color">Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <label for="bookname" style="float: left;"><b class="color">BookName</b></label>
+    <input type="text" placeholder="Book Name" name="bookname" required>
 
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
+    <label for="price" style="float: left;"><b class="color">Price</b></label>
+    <input type="text" placeholder="Price" name="price" required>
 
-  <div class="container" style="background-color:#f1f1f1; float: left;">
+    <label for="pic" style="float: left;"><b class="color">Picture</b></label>
+    <p>               </p>
+    <input type="file" placeholder="book pic" name="bookpic" required>
+    <p>   </p>
+
+
+
+    <button type="submit">Add Book</button>
+    <p>     </p>
+<!--     <div class="container" style="background-color:#f1f1f1; float: left;"> -->
     <button type="reset" class="btn btn-outline-success">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
+    
+  </div> 
+
 </form>
 </center>
 </body>
