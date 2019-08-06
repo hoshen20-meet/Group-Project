@@ -19,7 +19,8 @@ def about():
 
 @app.route('/store')
 def store():
-    return render_template('store.html')
+    Books = query_all_books()
+    return render_template("store.html",Books=Books)
 
 @app.route('/staff')
 def events():
