@@ -1421,12 +1421,12 @@ button:focus {
     position: absolute;
     left: 0;
     top: 0;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 30px;
+    line-height: 30px;
     color: #60bc0f;
     font-weight: 600; }
   .contact_info .info_item h6 {
-    font-size: 16px;
+    font-size: 25px;
     line-height: 24px;
     color: #777777;
     font-weight: bold;
@@ -1435,7 +1435,7 @@ button:focus {
     .contact_info .info_item h6 a {
       color: #222222; }
   .contact_info .info_item p {
-    font-size: 14px;
+    font-size: 20px;
     line-height: 24px;
     padding: 2px 0px; }
 
@@ -2755,12 +2755,13 @@ h6 {
     margin-bottom: 0px; }
 
 .footer_title {
-  font-size: 18px;
+  font-size: 40px;
   line-height: 24px;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
   text-transform: capitalize;
   color: #fff;
+  padding-bottom: 20px;
   margin-bottom: 28px; }
   @media (max-width: 991px) {
     .footer_title {
@@ -2796,7 +2797,6 @@ h6 {
   margin: auto;
   text-align: center;
 }
-
 
 
 /*---------------------------------------------------- */
