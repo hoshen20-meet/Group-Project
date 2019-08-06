@@ -24,188 +24,27 @@
     <!--================ End Home Banner Area =================-->
 	
 	<!--================ Start Causes Area =================-->
-	
+
     <div>
+        {% for book in Books %}
                 <table class="center">
-                    <tr >
-                        <td class="book"> <img src="static/img/img.jpg"> 
-                        <br>
-                        name: book
-                        <br>
-                        Author: Name
-                        <br>
-                        price:20 &#8362
-                       
 
-                    </td>
-
-                    <td class="book"> <img src="static/img/img.jpg"> 
+                    <tr>
+                        <td class="book"> <img src="../static/img/{{book.pic}}" width="150px" height="100px"> 
                         <br>
-                        name: book
+                        name= {{book.title}}
                         <br>
-                        Author: Name
+                        Author: {{book.authorname}}
                         <br>
-                        price:20 &#8362
-                    </td>
-
-                        <td class="book" > <img src="static/img/img.jpg"> 
-                        <br>
-                        name: book
-                        <br>
-                        Author: Name
-                        <br>
-                        price:20 &#8362
-                       
-
-                    </td>
-                    
-                       <td class="book"> <img src="static/img/img.jpg"> 
-                        <br>
-                        name: book
-                        <br>
-                        Author: Name
-                        <br>
-                        price:20 &#8362
-                       
-
-                    </td>                                       
-                    </tr>
-
-                    <tr >
-                        <td class="book"> <img src="static/img/img.jpg"> 
-                        <br>
-                        name: book
-                        <br>
-                        Author: Name
-                        <br>
-                        price:20 &#8362
-                       
-
-                    </td>
-
-                    <td class="book"> <img src="static/img/img.jpg"> 
-                        <br>
-                        name: book
-                        <br>
-                        Author: Name
-                        <br>
-                        price:20 &#8362
-                    </td>
-
-                        <td class="book" > <img src="static/img/img.jpg"> 
-                        <br>
-                        name: book
-                        <br>
-                        Author: Name
-                        <br>
-                        price:20 &#8362
-                       
-
-                    </td>
-                    
-                       <td class="book"> <img src="static/img/img.jpg"> 
-                        <br>
-                        name: book
-                        <br>
-                        Author: Name
-                        <br>
-                        price:20 &#8362
-                       
-
-                    </td>                                       
-                    </tr>
-
-
-                    <tr >
-                        <td class="book"> <img src="static/img/img.jpg"> 
-                        <br>
-                        name: book
-                        <br>
-                        Author: Name
-                        <br>
-                        price:20 &#8362
-                       
-
-                    </td>
-
-                    <td class="book"> <img src="static/img/img.jpg"> 
-                        <br>
-                        name: book
-                        <br>
-                        Author: Name
-                        <br>
-                        price:20 &#8362
-                    </td>
-
-                        <td class="book" > <img src="static/img/img.jpg"> 
-                        <br>
-                        name: book
-                        <br>
-                        Author: Name
-                        <br>
-                        price:20 &#8362
-                       
-
-                    </td>
-                    
-                       <td class="book"> <img src="static/img/img.jpg"> 
-                        <br>
-                        name: book
-                        <br>
-                        Author: Name
-                        <br>
-                        price:20 &#8362
-                       
-
-                    </td>                                       
-                    </tr>
-
-                    <tr >
-                        <td class="book"> <img src="static/img/img.jpg"> 
-                        <br>
-                        name: book
-                        <br>
-                        Author: Name
-                        <br>
-                        price:20 &#8362
-                       
-
-                    </td>
-
-                    <td class="book"> <img src="static/img/img.jpg"> 
-                        <br>
-                        name: book
-                        <br>
-                        Author: Name
-                        <br>
-                        price:20 &#8362
-                    </td>
-
-                        <td class="book" > <img src="static/img/img.jpg"> 
-                        <br>
-                        name: book
-                        <br>
-                        Author: Name
-                        <br>
-                        price:20 &#8362
-                       
-
-                    </td>
-                    
-                       <td class="book"> <img src="static/img/img.jpg"> 
-                        <br>
-                        name: book
-                        <br>
-                        Author: Name
-                        <br>
-                        price:20 &#8362
-                       
-
-                    </td>                                       
+                        price: {{book.price}} &#8362
+                    </td>                                      
                     </tr>
 
                 </table>
-    </div>
+                {% endfor %}
+        </div>
+
+
     </body>
     {% endblock %}
 
