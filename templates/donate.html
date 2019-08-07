@@ -20,21 +20,56 @@
 
         <h1 style="text-align: center; padding-bottom: 50px; padding-top: 100px">Our Stores</h1>
 
-<div id="googleMap" style="width:70%;height:900px; margin: auto;"></div>
 
-<script>
-function myMap() {
-var mapProp= {
-  center:new google.maps.LatLng(51.508742,-0.120850),
-  zoom:5,
-};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        <style>
+       /* Set the size of the div element that contains the map */
+      #map {
+        width:80%;
+        height:1200px;
+         margin: auto;
+       }
+    </style>
+
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var tel = {lat: 32.067908, lng: 34.786921};
+  var hesera = {lat: 32.440045, lng: 34.9183863};
+    var kfars = {lat: 32.1741875, lng: 34.9130882};
+    var ram = {lat: 31.9349174, lng: 34.8672625};
+     var ash = {lat: 31.8150765, lng: 34.6584602};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 9, center: tel});
+    var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 9, center: hesera });
+    var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 9, center: kfars });
+    var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 9, center: ram });
+    var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 9, center: ash });
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: tel, map: map});
+  var marker2 = new google.maps.Marker({position: hesera, map: map});
+   var marker2 = new google.maps.Marker({position: kfars, map: map});
+    var marker2 = new google.maps.Marker({position: ram, map: map});
+    var marker2 = new google.maps.Marker({position: ash, map: map});
 }
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+ <script src="https://maps.googleapis.com/maps/api/js?key=
 AIzaSyD_1e9-jiABTPKehMIizGWjAp9gvCoboVo
-&callback=myMap"></script>
+&callback=initMap"></script>
+
+
         
   <!--================  quate  =================-->  
 
