@@ -1,0 +1,50 @@
+
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <!--================ Home Banner Area =================-->
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <a class="primary_btn yellow_btn text-white" href="/checkout">checkout</a> <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+            <div class="container">
+                <div class="banner_content text-center" >
+                   
+                    <h2>THANK YOU!</h2>
+                    <p> Thank you for buying a book from Rebooks! See you later!</p>
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ End Home Banner Area =================-->
+	
+	<!--================ Start Causes Area =================-->
+
+    <div>
+        {% for book in Books %}
+                <table class="center">
+
+                    <tr>
+                        <td class="book"> <img src="../static/img/{{book.pic}}" width="150px" height="100px"> 
+                        <br>
+                        Book Name: {{book.title}}
+                        <br>
+                        Author: {{book.authorname}}
+                        <br>
+                        Price: {{book.price}} &#8362
+                    </td>                                      
+                    </tr>
+
+                </table>
+                {% endfor %}
+
+
+        </div>
+
+
+    </body>
+    {% endblock %}
+
+</html>
